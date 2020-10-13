@@ -16,8 +16,13 @@ const CartItem = mongoose.model("CartItem", CartItemSchema);
  
 const OrderSchema = new mongoose.Schema(
   {
+    /*
+    request comes into orderSchema and then it looks for  cartschema where it cheks for object id of products 
+    and then is stores in cartSChema but cartSchema is not saved anywhere 
+    and it stores that into products 
+    */
     
-    products: [CartItemSchema],
+    products: [CartItemSchema],//It is collection in collection 
     transaction_id: {},
     amount: { type: Number,default:0 },
     address: String,
