@@ -17,7 +17,7 @@ const expressValidator=require('express-validator')
 const app=express();
 
 
-const connect = mongoose.connect(config.mongoURI,
+const connect = mongoose.connect("mongodb+srv://prerna:Prerna123@cluster0.jokxx.mongodb.net/ecom?retryWrites=true&w=majority",
   {
     useNewUrlParser: true, useUnifiedTopology: true,
     useCreateIndex: true, useFindAndModify: false
