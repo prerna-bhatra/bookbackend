@@ -7,7 +7,7 @@ const userRoutes=require('./routes/users')
 const userRoutes1=require('./routes/user1')
 const categoryRoutes=require('./routes/category')
 const productRoutes=require('./routes/product')
-const BraintreeRoutes=require('./routes/braintree')
+//const BraintreeRoutes=require('./routes/braintree')
 const orderRoutes=require('./routes/order')
 const config=require('./dev.js')
 const morgan=require("morgan");
@@ -37,7 +37,7 @@ app.use('/api',userRoutes);
 app.use('/api',userRoutes1);
 app.use('/api',categoryRoutes);
 app.use('/api',productRoutes);
-app.use('/api',BraintreeRoutes);
+//app.use('/api',BraintreeRoutes);
 app.use('/api',orderRoutes);
 
 const port=process.env.PORT || 8000
