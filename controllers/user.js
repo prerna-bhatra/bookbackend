@@ -42,12 +42,12 @@ exports.signin=(req,res)=>
 			}
 
 		//generate a toekn
-		const token=jwt.sign({_id:user._id},expressJwt({ secret: "123456", algorithms: ['HS256']  }))
+		const token=jwt.sign({_id:user._id},process.env.JWT_SECRET)
 		//persist the token as 't' in cookie with expiry date
 
 		res.cookie('t',token,{expire:new Date()+9999})
 
-		//return responseHS256
+		//return response
 		const {_id,name,email,role,address,contact}=user
 		return res.json({token,user:{_id,email,name,role,address,contact}});
 
@@ -63,7 +63,7 @@ exports.signout=(req,res)=>
 }
 
 exports.requireSignin = expressJwt({
-  secret: "123456"  ,
+  secret: process.env.JWT_SECRET,
   algorithms: ["HS256"], // added later
   userProperty: "auth",
 });
