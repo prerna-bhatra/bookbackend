@@ -1,5 +1,4 @@
-let temp = process.env.NODE_PATH
-require('dotenv').config({ path: temp })
+require('dotenv').config()
 const cors=require('cors')
 const express=require('express');
 const mongoose=require('mongoose');
